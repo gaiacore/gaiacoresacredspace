@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)file:///C:/Users/Wendy/Downloads/sessions%20(3).html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sessions &amp; Healing | Gaia Core Sacred Space by Katyayani</title>
+  <link href="./Sessions &amp; Healing _ Gaia Core Sacred Space by Katyayani_files/css2" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --deep-earth: #1A1410;
+      --soil:       #2E1F0F;
+      --bark:       #4A3728;
+      --gold:       #C8962A;
+      --pale-gold:  #E8C97A;
+      --sage:       #7A8C6E;
+      --cream:      #F2EBD9;
+      --ash:        #D4C9B5;
+      --font-display: 'Cormorant Garamond', serif;
+      --font-body:    'Jost', sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--deep-earth); color: var(--cream); font-family: var(--font-body); font-weight: 300; line-height: 1.7; overflow-x: hidden; }
+
+    /* NAV */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 0.6rem 2.5rem;
+      background: rgba(26,20,16,0.92); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(200,150,42,0.15);
+    }
+    .nav-logo { font-family: var(--font-display); font-size: 1.1rem; color: var(--pale-gold); text-decoration: none; }
+    .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+    .nav-links a { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ash); text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--pale-gold); }
+
+    /* PAGE HERO */
+    .page-hero {
+      min-height: 40vh; display: flex; flex-direction: column;
+      justify-content: center; align-items: center; text-align: center;
+      padding: 8rem 2rem 4rem; position: relative; overflow: hidden;
+    }
+    .page-hero::before {
+      content: ''; position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(200,150,42,0.10) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .page-eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; position: relative; z-index: 1; }
+    .page-title { font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5rem); font-weight: 300; color: var(--cream); position: relative; z-index: 1; line-height: 1.1; }
+    .page-title em { font-style: italic; color: var(--pale-gold); }
+    .page-divider { margin: 2rem auto; width: 60px; height: 1px; background: linear-gradient(to right, transparent, var(--gold), transparent); }
+    .page-intro { font-size: 0.95rem; color: var(--ash); max-width: 52ch; text-align: center; position: relative; z-index: 1; line-height: 1.9; }
+
+    /* HOW IT WORKS */
+    .how-it-works { background: var(--soil); padding: 5rem 2rem; }
+    .container { max-width: 1000px; margin: 0 auto; }
+    .section-label { font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .section-title { font-family: var(--font-display); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 300; color: var(--cream); margin-bottom: 2.5rem; line-height: 1.2; }
+    .section-title em { font-style: italic; color: var(--pale-gold); }
+
+    .steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .step { text-align: center; padding: 2rem 1rem; border: 1px solid rgba(200,150,42,0.15); background: rgba(26,20,16,0.4); }
+    .step-number { font-family: var(--font-display); font-size: 2.5rem; color: rgba(200,150,42,0.25); line-height: 1; margin-bottom: 0.8rem; }
+    .step-title { font-family: var(--font-display); font-size: 1.1rem; color: var(--pale-gold); margin-bottom: 0.6rem; }
+    .step-desc { font-size: 0.82rem; color: var(--ash); line-height: 1.7; }
+
+    /* WHAT TO EXPECT */
+    .expect { background: var(--deep-earth); padding: 5rem 2rem; }
+    .expect-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .expect-card { padding: 2rem; border-top: 2px solid rgba(200,150,42,0.3); }
+    .expect-icon { font-size: 1.5rem; margin-bottom: 0.8rem; display: block; }
+    .expect-title { font-family: var(--font-display); font-size: 1.2rem; color: var(--pale-gold); margin-bottom: 0.6rem; }
+    .expect-desc { font-size: 0.85rem; color: var(--ash); line-height: 1.8; }
+
+    /* SESSIONS */
+    .sessions { background: var(--soil); padding: 5rem 2rem; }
+    .session-card {
+      border: 1px solid rgba(200,150,42,0.2);
+      background: rgba(26,20,16,0.5);
+      margin-bottom: 2rem;
+      overflow: hidden;
+    }
+    .session-header {
+      padding: 2rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: flex-start;
+      cursor: pointer;
+      transition: background 0.3s;
+      border-bottom: 1px solid rgba(200,150,42,0.1);
+    }
+    .session-header:hover { background: rgba(200,150,42,0.05); }
+    .session-tag { font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--sage); margin-bottom: 0.5rem; }
+    .session-name { font-family: var(--font-display); font-size: 1.6rem; color: var(--cream); font-weight: 400; line-height: 1.2; margin-bottom: 0.4rem; }
+    .session-meta { font-size: 0.8rem; color: var(--ash); letter-spacing: 0.05em; }
+    .session-price-block { text-align: right; flex-shrink: 0; margin-left: 2rem; }
+    .session-price { font-family: var(--font-display); font-size: 2rem; color: var(--gold); line-height: 1; }
+    .session-price-label { font-size: 0.7rem; letter-spacing: 0.1em; color: var(--ash); margin-top: 0.3rem; }
+    .session-toggle { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-top: 0.8rem; display: block; }
+
+    .session-body { padding: 0 2.5rem; max-height: 0; overflow: hidden; transition: max-height 0.5s ease, padding 0.3s; }
+    .session-body.open { max-height: 3000px; padding: 2rem 2.5rem; }
+
+    .session-desc { font-size: 0.92rem; color: var(--ash); line-height: 1.9; margin-bottom: 1.5rem; }
+    .session-flow-title { font-family: var(--font-display); font-size: 1.2rem; color: var(--pale-gold); margin: 1.5rem 0 1rem; }
+    .flow-step { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
+    .flow-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: 0.1rem; }
+    .flow-content { font-size: 0.88rem; color: var(--ash); line-height: 1.8; }
+    .flow-content strong { color: var(--cream); font-weight: 400; display: block; font-family: var(--font-display); font-size: 1rem; }
+
+    .benefits-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem; margin: 1rem 0 1.5rem; }
+    .benefit-item { font-size: 0.82rem; color: var(--ash); padding: 0.3rem 0; display: flex; align-items: center; gap: 0.6rem; }
+    .benefit-tick { color: var(--gold); }
+
+    .includes-list { list-style: none; margin: 0.8rem 0 1.5rem; }
+    .includes-list li { font-size: 0.85rem; color: var(--ash); padding: 0.4rem 0; border-bottom: 1px solid rgba(200,150,42,0.08); display: flex; align-items: center; gap: 0.8rem; }
+    .includes-list li:last-child { border-bottom: none; }
+
+    .session-quote { font-family: var(--font-display); font-style: italic; font-size: 1.1rem; color: var(--pale-gold); line-height: 1.6; border-left: 2px solid rgba(200,150,42,0.3); padding-left: 1.2rem; margin: 1.5rem 0; }
+
+    .price-box { background: rgba(200,150,42,0.06); border: 1px solid rgba(200,150,42,0.2); padding: 1.2rem 1.5rem; margin: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; }
+    .price-box-label { font-size: 0.8rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ash); }
+    .price-box-amount { font-family: var(--font-display); font-size: 1.8rem; color: var(--gold); }
+
+    .btn-book {
+      display: inline-block; padding: 0.9rem 2.4rem;
+      border: 1px solid var(--gold); color: var(--gold);
+      font-family: var(--font-body); font-size: 0.72rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      text-decoration: none; transition: background 0.3s, color 0.3s;
+      margin-top: 0.5rem; cursor: pointer; background: transparent;
+    }
+    .btn-book:hover { background: var(--gold); color: var(--deep-earth); }
+
+    /* BOOKING FORM */
+    .booking { background: var(--deep-earth); padding: 5rem 2rem; }
+    .booking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ash); margin-bottom: 0.5rem; }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; padding: 0.8rem 1rem;
+      background: rgba(46,31,15,0.5); border: 1px solid rgba(200,150,42,0.2);
+      color: var(--cream); font-family: var(--font-body); font-size: 0.88rem;
+      outline: none; transition: border-color 0.3s;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus { border-color: var(--gold); }
+    .form-group select option { background: var(--soil); }
+    .form-group textarea { min-height: 120px; resize: vertical; }
+    .form-note { font-size: 0.78rem; color: var(--bark); margin-top: 1rem; line-height: 1.7; }
+
+    /* FOOTER */
+    footer { background: #110d09; padding: 3rem 2rem; text-align: center; border-top: 1px solid rgba(200,150,42,0.1); }
+    .footer-logo { font-family: var(--font-display); font-size: 1.2rem; color: var(--pale-gold); margin-bottom: 1rem; }
+    .footer-copy { font-size: 0.75rem; color: var(--bark); }
+
+    @media (max-width: 768px) {
+      nav { padding: 0.4rem 1.2rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links li:nth-child(n+5) { display: none; }
+      .steps-grid { grid-template-columns: repeat(2, 1fr); }
+      .expect-grid { grid-template-columns: 1fr; }
+      .session-header { flex-direction: column; }
+      .session-price-block { text-align: left; margin-left: 0; margin-top: 1rem; }
+      .benefits-grid { grid-template-columns: 1fr; }
+      .booking-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="file:///C:/Users/Wendy/Downloads/index.html" class="nav-logo"><img src="data:image/jpeg;base64,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" alt="Gaia Core Sacred Space" style="height:120px; width:auto; filter: drop-shadow(0 0 8px rgba(200,150,42,0.4));"></a>
+    <ul class="nav-links">
+      <li><a href="file:///C:/Users/Wendy/Downloads/index.html">Home</a></li>
+      <li><a href="file:///C:/Users/Wendy/Downloads/sessions.html" class="active">Sessions</a></li>
+      <li><a href="file:///C:/Users/Wendy/Downloads/index.html#education">Education</a></li>
+      <li><a href="file:///C:/Users/Wendy/Downloads/index.html#blog">Wisdom</a></li>
+      <li><a href="file:///C:/Users/Wendy/Downloads/sessions%20(3).html#booking">Book</a></li>
+    </ul>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <header class="page-hero">
+    <p class="page-eyebrow">Healing · Transformation · Awakening</p>
+    <h1 class="page-title">Healing <em>Sessions</em></h1>
+    <div class="page-divider"></div>
+    <p class="page-intro">Each session is a sacred space held with compassion, intention, and deep respect for your unique journey. All sessions are offered in person in Durban, South Africa.</p>
+  </header>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <div class="container">
+      <p class="section-label">The Process</p>
+      <h2 class="section-title">How <em>Sessions</em> Work</h2>
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-number">01</div>
+          <div class="step-title">Reach Out</div>
+          <p class="step-desc">Complete the booking enquiry form below or contact Katyayani directly via WhatsApp to discuss your needs.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">02</div>
+          <div class="step-title">Brief Consultation</div>
+          <p class="step-desc">A short conversation to understand your intentions, answer any questions, and confirm which session is right for you.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">03</div>
+          <div class="step-title">Confirm &amp; Pay</div>
+          <p class="step-desc">Your appointment is confirmed once payment is received via EFT. Banking details are shared upon booking.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">04</div>
+          <div class="step-title">Your Session</div>
+          <p class="step-desc">Arrive with an open heart and comfortable clothing. Each session is tailored to your unique needs on the day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="expect">
+    <div class="container">
+      <p class="section-label">Your Experience</p>
+      <h2 class="section-title">What to <em>Expect</em></h2>
+      <div class="expect-grid">
+        <div class="expect-card">
+          <span class="expect-icon">🌿</span>
+          <div class="expect-title">Before Your Session</div>
+          <p class="expect-desc">Drink plenty of water, wear comfortable loose clothing, and avoid heavy meals directly beforehand. Come with an open mind and any questions or intentions you wish to set for your session.</p>
+        </div>
+        <div class="expect-card">
+          <span class="expect-icon">✨</span>
+          <div class="expect-title">During Your Session</div>
+          <p class="expect-desc">You are always in control. Sessions are conducted in a safe, nurturing environment. You may experience deep relaxation, emotional release, warmth, tingling sensations, or profound stillness — every experience is valid and unique.</p>
+        </div>
+        <div class="expect-card">
+          <span class="expect-icon">🙏</span>
+          <div class="expect-title">After Your Session</div>
+          <p class="expect-desc">Rest where possible, drink water, and be gentle with yourself. Integration can continue for several days after a session. You may receive follow-up guidance, meditation practices, or personalised recommendations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SESSIONS -->
+  <section class="sessions">
+    <div class="container">
+      <p class="section-label">All Sessions</p>
+      <h2 class="section-title">Choose Your <em>Healing Path</em></h2>
+
+      <!-- SESSION 1 — Energy Healing & Sound Therapy -->
+      <div class="session-card">
+        <div class="session-header" onclick="toggleSession(&#39;s1&#39;)">
+          <div>
+            <p class="session-tag">In-Person · Energy &amp; Sound</p>
+            <h3 class="session-name">Energy Healing &amp; Sound Therapy</h3>
+            <p class="session-meta">Initial Session: 90–120 min &nbsp;·&nbsp; Follow-Up: 60–90 min</p>
+            <span class="session-toggle" id="s1-toggle">Expand for full details ↓</span>
+          </div>
+          <div class="session-price-block">
+            <div class="session-price">R950</div>
+            <div class="session-price-label">Initial Session</div>
+            <div class="session-price" style="font-size:1.4rem; margin-top:0.5rem;">R700</div>
+            <div class="session-price-label">Follow-Up</div>
+          </div>
+        </div>
+        <div class="session-body" id="s1">
+          <p class="session-desc">This first session is designed to gain a deeper understanding of your physical, emotional, mental, and energetic well-being. We begin with a consultation to explore your current challenges, areas of imbalance, stress levels, health concerns, and personal goals.</p>
+          <p class="session-desc">Following the consultation, your session may include a combination of energy healing, chakra balancing, grounding techniques, singing bowl and tuning fork sound therapy, breathwork, relaxation and nervous system regulation, and personalised guidance.</p>
+
+          <div class="session-flow-title">Tuning Fork Frequencies</div>
+          <div class="benefits-grid">
+            <div class="benefit-item"><span class="benefit-tick">✦</span> 128 Hz — Grounding &amp; physical body awareness</div>
+            <div class="benefit-item"><span class="benefit-tick">✦</span> 256 Hz — Balance &amp; nervous system regulation</div>
+            <div class="benefit-item"><span class="benefit-tick">✦</span> 512 Hz — Mental clarity &amp; energetic alignment</div>
+            <div class="benefit-item"><span class="benefit-tick">✦</span> 528 Hz — Emotional healing &amp; heart-centred wellbeing</div>
+          </div>
+
+          <div class="session-flow-title">Suitable For</div>
+          <div class="benefits-grid">
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Stress &amp; Burnout</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Anxiety &amp; Emotional Overwhelm</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Feeling Stuck or Unmotivated</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Fatigue &amp; Low Energy</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Emotional Healing</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Spiritual Growth &amp; Energy Alignment</div>
+          </div>
+
+          <div class="session-quote">"Supporting the mind, body, emotions, and energy field to create greater balance, awareness, and wellbeing."</div>
+          <div class="price-box">
+            <div><span class="price-box-label">Initial Consultation &amp; Healing Session</span><br><span style="font-size:0.78rem; color:var(--bark);">90–120 Minutes</span></div>
+            <span class="price-box-amount">R950</span>
+          </div>
+          <div class="price-box">
+            <div><span class="price-box-label">Follow-Up Sessions</span><br><span style="font-size:0.78rem; color:var(--bark);">60–90 Minutes</span></div>
+            <span class="price-box-amount">R700</span>
+          </div>
+          <a href="file:///C:/Users/Wendy/Downloads/sessions%20(3).html#booking" class="btn-book">Book This Session</a>
+        </div>
+      </div>
+
+      <!-- SESSION 2 — Kundalini Activation -->
+      <div class="session-card">
+        <div class="session-header" onclick="toggleSession(&#39;s2&#39;)">
+          <div>
+            <p class="session-tag">In-Person · Breathwork &amp; Energy</p>
+            <h3 class="session-name">Kundalini Activation Massage</h3>
+            <p class="session-meta">90 Minutes</p>
+            <span class="session-toggle" id="s2-toggle">Expand for full details ↓</span>
+          </div>
+          <div class="session-price-block">
+            <div class="session-price">R950</div>
+            <div class="session-price-label">Per Session</div>
+          </div>
+        </div>
+        <div class="session-body" id="s2">
+          <p class="session-desc">This session is designed to increase the flow of life force energy through the body while supporting relaxation, energetic balance, creativity, and overall well-being. Through a combination of breathwork, sound healing, tuning forks, and therapeutic massage, we work with the body's natural energy pathways to encourage greater flow and release areas of tension and stagnation.</p>
+
+          <div class="session-flow-title">Session Flow</div>
+          <div class="flow-step"><span class="flow-icon">🌿</span><div class="flow-content"><strong>Grounding Breathwork</strong>Gentle grounding practices to settle the nervous system, bring awareness into the body, and create a sense of safety and presence.</div></div>
+          <div class="flow-step"><span class="flow-icon">✨</span><div class="flow-content"><strong>Breathwork Activation</strong>A guided breathwork process to increase energy flow, awaken vitality, and prepare the body for deeper energetic work.</div></div>
+          <div class="flow-step"><span class="flow-icon">🔔</span><div class="flow-content"><strong>Spinal Alignment with Tuning Forks</strong>Tuning forks applied along the spine and energy centres to support energetic alignment, relaxation, and balance.</div></div>
+          <div class="flow-step"><span class="flow-icon">💆</span><div class="flow-content"><strong>Energy Healing Massage</strong>Therapeutic energy-based massage to release physical tension, encourage circulation, and support integration.</div></div>
+          <div class="flow-step"><span class="flow-icon">🌟</span><div class="flow-content"><strong>Energy Balancing &amp; Integration</strong>Concludes with grounding practices to help you leave feeling centred, relaxed, and supported.</div></div>
+
+          <div class="session-flow-title">Benefits May Include</div>
+          <div class="benefits-grid">
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Increased Energy and Vitality</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Deep Relaxation &amp; Stress Relief</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Enhanced Creativity &amp; Motivation</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Greater Body Awareness</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Emotional Release &amp; Balance</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Improved Grounding &amp; Presence</div>
+          </div>
+
+          <div class="session-quote">"A journey of breath, sound, touch, and energy to help restore flow, balance, and connection within yourself."</div>
+          <div class="price-box">
+            <div><span class="price-box-label">Kundalini Activation Massage</span><br><span style="font-size:0.78rem; color:var(--bark);">90 Minutes</span></div>
+            <span class="price-box-amount">R950</span>
+          </div>
+          <a href="file:///C:/Users/Wendy/Downloads/sessions%20(3).html#booking" class="btn-book">Book This Session</a>
+        </div>
+      </div>
+
+      <!-- SESSION 3 — Astral Healing -->
+      <div class="session-card">
+        <div class="session-header" onclick="toggleSession(&#39;s3&#39;)">
+          <div>
+            <p class="session-tag">In-Person · Premium Journey · Consciousness Expansion</p>
+            <h3 class="session-name">Astral Healing, DNA Activation &amp; Light Body Development</h3>
+            <p class="session-meta">Approximately 2.5 – 3 Hours</p>
+            <span class="session-toggle" id="s3-toggle">Expand for full details ↓</span>
+          </div>
+          <div class="session-price-block">
+            <div class="session-price">R2,100</div>
+            <div class="session-price-label">Per Session</div>
+          </div>
+        </div>
+        <div class="session-body" id="s3">
+          <p class="session-desc">This experience is designed for individuals who feel called to deepen their connection to themselves, their soul journey, and their higher potential. Unlike traditional healing sessions that focus solely on relaxation or energy balancing, this process works with the physical, emotional, energetic, and spiritual aspects of the individual to support greater awareness, embodiment, and personal transformation.</p>
+
+          <div class="session-flow-title">Session Flow</div>
+          <div class="flow-step"><span class="flow-icon">💬</span><div class="flow-content"><strong>Initial Consultation (15–20 Minutes)</strong>We begin by discussing your current circumstances, challenges, goals, and intentions so the session can be tailored specifically to you.</div></div>
+          <div class="flow-step"><span class="flow-icon">✨</span><div class="flow-content"><strong>Astral Healing &amp; DNA Activation</strong>Through guided energy work, consciousness practices, and intuitive exploration, we work with the energetic blueprint to identify areas requiring support, healing, and expansion.</div></div>
+          <div class="flow-step"><span class="flow-icon">🔑</span><div class="flow-content"><strong>Five Personal Ascension Keys</strong>You receive five personalised Ascension Keys selected according to your current stage of growth and development — practical guidance and energetic focus points for your ongoing journey.</div></div>
+          <div class="flow-step"><span class="flow-icon">🧘</span><div class="flow-content"><strong>Meditation &amp; Integration Materials</strong>You receive guidance relating to your Ascension Keys together with meditation practices to assist continued integration after the session.</div></div>
+          <div class="flow-step"><span class="flow-icon">💆</span><div class="flow-content"><strong>Energy Healing Massage (60–75 Minutes)</strong>The session concludes with an Energy Healing Massage to assist grounding, embodiment, nervous system regulation, and integration of the energetic work.</div></div>
+
+          <div class="session-flow-title">What's Included</div>
+          <ul class="includes-list">
+            <li><span style="color:var(--gold);">✦</span> Consultation Session</li>
+            <li><span style="color:var(--gold);">✦</span> Astral Healing &amp; DNA Activation</li>
+            <li><span style="color:var(--gold);">✦</span> Five Personal Ascension Keys</li>
+            <li><span style="color:var(--gold);">✦</span> Ascension Key Guidance</li>
+            <li><span style="color:var(--gold);">✦</span> Meditation Support Material</li>
+            <li><span style="color:var(--gold);">✦</span> 60–75 Minute Energy Healing Massage</li>
+            <li><span style="color:var(--gold);">✦</span> Post-Session Integration Guidance</li>
+          </ul>
+
+          <div class="session-flow-title">This Journey May Support</div>
+          <div class="benefits-grid">
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Soul Connection &amp; Spiritual Growth</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Light Body Development</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Higher Chakra Activation</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Expanded Awareness</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Intuition &amp; Inner Guidance</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Purpose &amp; Direction</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Emotional Healing &amp; Energy Alignment</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Embodiment of Higher Consciousness</div>
+          </div>
+
+          <div class="session-quote">"Ascension is not about becoming something else. It is about remembering who you already are and learning to embody that wisdom within your everyday life."</div>
+          <div class="price-box">
+            <div><span class="price-box-label">Astral Healing, DNA Activation &amp; Light Body Development</span><br><span style="font-size:0.78rem; color:var(--bark);">Approximately 2.5 – 3 Hours</span></div>
+            <span class="price-box-amount">R2,100</span>
+          </div>
+          <a href="file:///C:/Users/Wendy/Downloads/sessions%20(3).html#booking" class="btn-book">Book This Session</a>
+        </div>
+      </div>
+
+      <!-- SESSION 4 — Hypnotherapy -->
+      <div class="session-card">
+        <div class="session-header" onclick="toggleSession(&#39;s4&#39;)">
+          <div>
+            <p class="session-tag">In-Person · Hypnotherapy &amp; Subconscious Healing</p>
+            <h3 class="session-name">Hypnotherapy &amp; Regression Therapy</h3>
+            <p class="session-meta">2 Hours</p>
+            <span class="session-toggle" id="s4-toggle">Expand for full details ↓</span>
+          </div>
+          <div class="session-price-block">
+            <div class="session-price">R900</div>
+            <div class="session-price-label">Per Session</div>
+          </div>
+        </div>
+        <div class="session-body" id="s4">
+          <p class="session-desc">Hypnotherapy is a gentle yet powerful therapeutic process that helps access the subconscious mind, where many of our beliefs, emotional responses, habits, memories, and behavioural patterns are stored. Through hypnotherapy and regression techniques, we work to identify, understand, and release these underlying patterns, creating greater freedom, self-awareness, and emotional wellbeing.</p>
+
+          <div class="session-flow-title">Session Flow</div>
+          <div class="flow-step"><span class="flow-icon">💬</span><div class="flow-content"><strong>Consultation &amp; Goal Setting</strong>We begin by discussing your current challenges, symptoms, patterns, and goals for the session.</div></div>
+          <div class="flow-step"><span class="flow-icon">🌊</span><div class="flow-content"><strong>Guided Relaxation &amp; Hypnotic Induction</strong>Using guided relaxation techniques, you are gently guided into a focused and relaxed state where the subconscious mind becomes more accessible.</div></div>
+          <div class="flow-step"><span class="flow-icon">🔍</span><div class="flow-content"><strong>Regression &amp; Exploration</strong>Together we explore significant memories, experiences, beliefs, or emotional patterns that may be contributing to present-day challenges.</div></div>
+          <div class="flow-step"><span class="flow-icon">💛</span><div class="flow-content"><strong>Understanding &amp; Emotional Release</strong>We work to release emotional charge, update limiting beliefs, and create new perspectives that support healing and growth.</div></div>
+          <div class="flow-step"><span class="flow-icon">🌿</span><div class="flow-content"><strong>Integration &amp; Discussion</strong>The session concludes with discussion, reflection, and practical guidance to support ongoing change and integration.</div></div>
+
+          <div class="session-flow-title">Suitable For</div>
+          <div class="benefits-grid">
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Emotional Healing</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Childhood Trauma Recovery</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Anxiety &amp; Stress Management</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Confidence &amp; Self-Esteem</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Relationship Challenges</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Behavioural Change</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Self-Discovery</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Understanding Recurring Life Patterns</div>
+          </div>
+
+          <div class="session-quote">"When we understand the stories held within the subconscious mind, we create the opportunity to change the way we experience the present."</div>
+          <div class="price-box">
+            <div><span class="price-box-label">Hypnotherapy &amp; Regression Therapy</span><br><span style="font-size:0.78rem; color:var(--bark);">2 Hours</span></div>
+            <span class="price-box-amount">R900</span>
+          </div>
+          <a href="file:///C:/Users/Wendy/Downloads/sessions%20(3).html#booking" class="btn-book">Book This Session</a>
+        </div>
+      </div>
+
+      <!-- SESSION 5 — Past Life Regression -->
+      <div class="session-card">
+        <div class="session-header" onclick="toggleSession(&#39;s5&#39;)">
+          <div>
+            <p class="session-tag">In-Person · Soul Exploration</p>
+            <h3 class="session-name">Past Life Regression Therapy</h3>
+            <p class="session-meta">2 Hours</p>
+            <span class="session-toggle" id="s5-toggle">Expand for full details ↓</span>
+          </div>
+          <div class="session-price-block">
+            <div class="session-price">R900</div>
+            <div class="session-price-label">Per Session</div>
+          </div>
+        </div>
+        <div class="session-body" id="s5">
+          <p class="session-desc">Past Life Regression is a guided process that allows individuals to explore experiences, memories, emotions, and insights that may arise from beyond their current lifetime. Whether understood as past-life memories, symbolic experiences of the subconscious mind, or soul-level narratives, regression can offer profound insight, healing, and understanding.</p>
+
+          <div class="session-flow-title">Session Flow</div>
+          <div class="flow-step"><span class="flow-icon">💬</span><div class="flow-content"><strong>Consultation &amp; Intention Setting</strong>We begin by discussing your reasons for seeking a regression and the areas of life you wish to explore.</div></div>
+          <div class="flow-step"><span class="flow-icon">🌊</span><div class="flow-content"><strong>Guided Relaxation &amp; Regression</strong>Using a gentle hypnotic process, you are guided into a deeply relaxed state where memories, symbols, emotions, and experiences can emerge naturally.</div></div>
+          <div class="flow-step"><span class="flow-icon">🔍</span><div class="flow-content"><strong>Exploration &amp; Understanding</strong>Together we explore the experiences that arise and examine how they may relate to your current life circumstances, relationships, emotions, or personal growth journey.</div></div>
+          <div class="flow-step"><span class="flow-icon">💛</span><div class="flow-content"><strong>Healing &amp; Release</strong>Where appropriate, we work with understanding, forgiveness, emotional release, and integration of the lessons revealed through the experience.</div></div>
+          <div class="flow-step"><span class="flow-icon">🌿</span><div class="flow-content"><strong>Discussion &amp; Integration</strong>The session concludes with reflection, discussion, and practical guidance to support integration into everyday life.</div></div>
+
+          <div class="session-flow-title">Suitable For</div>
+          <div class="benefits-grid">
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Spiritual Growth &amp; Self-Discovery</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Understanding Life Patterns</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Soul Exploration</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Emotional Healing</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Relationship Patterns</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Personal Transformation</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Greater Self-Awareness</div>
+            <div class="benefit-item"><span class="benefit-tick">✓</span> Understanding the Soul's Journey</div>
+          </div>
+
+          <div class="session-quote">"Sometimes the answers we seek in the present are found through understanding the deeper stories carried by the soul."</div>
+          <div class="price-box">
+            <div><span class="price-box-label">Past Life Regression Therapy</span><br><span style="font-size:0.78rem; color:var(--bark);">2 Hours</span></div>
+            <span class="price-box-amount">R900</span>
+          </div>
+          <a href="file:///C:/Users/Wendy/Downloads/sessions%20(3).html#booking" class="btn-book">Book This Session</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section class="booking" id="booking">
+    <div class="container">
+      <div class="booking-grid">
+        <div>
+          <p class="section-label">Book a Session</p>
+          <h2 class="section-title">Ready to Begin Your <em>Journey?</em></h2>
+          <p style="font-size:0.92rem; color:var(--ash); line-height:1.9; margin-bottom:1.5rem;">Complete the form and Katyayani will be in touch within 24 hours to confirm your appointment and share payment details.</p>
+          <p style="font-size:0.92rem; color:var(--ash); line-height:1.9; margin-bottom:1.5rem;">You can also reach out directly via WhatsApp:</p>
+          <a href="https://wa.me/27615426101" target="_blank" class="btn-book">💬 &nbsp;WhatsApp Katyayani</a>
+          <p style="font-size:0.78rem; color:var(--bark); margin-top:2rem; line-height:1.7;">All sessions are held in person in Durban, KwaZulu-Natal, South Africa. Payment via EFT. Your appointment is confirmed once payment is received.</p>
+        </div>
+        <div>
+          <div class="form-group">
+            <label>Your Full Name</label>
+            <input type="text" placeholder="Your name">
+          </div>
+          <div class="form-group">
+            <label>Email Address</label>
+            <input type="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label>WhatsApp Number</label>
+            <input type="tel" placeholder="+27 ...">
+          </div>
+          <div class="form-group">
+            <label>Session You're Interested In</label>
+            <select>
+              <option value="">— Select a session —</option>
+              <option>Energy Healing &amp; Sound Therapy — R950 / R700</option>
+              <option>Kundalini Activation Massage — R950</option>
+              <option>Astral Healing, DNA Activation &amp; Light Body Development — R2,100</option>
+              <option>Hypnotherapy &amp; Regression Therapy — R900</option>
+              <option>Past Life Regression Therapy — R900</option>
+              <option>Not sure — please help me choose</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Tell Katyayani a little about what brings you here</label>
+            <textarea placeholder="Share as much or as little as you feel comfortable with..."></textarea>
+          </div>
+          <button class="btn-book" onclick="alert(&#39;Thank you! Katyayani will be in touch within 24 hours.&#39;)">Send Booking Enquiry</button>
+          <p class="form-note">Your information is kept completely confidential and will only be used to respond to your enquiry.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Gaia Core Sacred Space ✦ by Katyayani</div>
+    <p class="footer-copy">© 2026 Gaia Core Sacred Space by Katyayani · Durban, South Africa · All rights reserved</p>
+  </footer>
+
+  <script>
+    function toggleSession(id) {
+      const body = document.getElementById(id);
+      const toggle = document.getElementById(id + '-toggle');
+      const isOpen = body.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.session-body').forEach(b => b.classList.remove('open'));
+      document.querySelectorAll('.session-toggle').forEach(t => t.textContent = 'Expand for full details ↓');
+      // Open clicked if it was closed
+      if (!isOpen) {
+        body.classList.add('open');
+        toggle.textContent = 'Collapse ↑';
+        body.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  </script>
+
+
+
+</body></html>
